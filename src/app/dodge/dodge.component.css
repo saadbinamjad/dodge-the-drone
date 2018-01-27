@@ -1,0 +1,19 @@
+div.image {
+  height: 100vh;
+  background-image: url('../../assets/images/back.gif');
+}
+
+.bird {
+  z-index: 99 !important;
+  position: absolute;
+}
+
+.button {
+  position: relative;
+  top: 50%;
+}
+
+.wrapper {
+  background: mediumpurple;
+  text-align: center;
+}

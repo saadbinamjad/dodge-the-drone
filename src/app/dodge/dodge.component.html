@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <ng-container *ngIf="!show">
+    <h2>Dodge the Drone</h2>
+    <button class="button" (click)="start()">Start</button>
+  </ng-container>
+  <ng-container *ngIf="show">
+    <h2 style="text-align: center" (click)="start()">Score: {{ score }}</h2>
+    <button class="button" (click)="start()">Restart</button>
+    <button class="button" *ngIf="!showDrone" (click)="showDroneFn()">Show Drone</button>
+    <button class="button" *ngIf="showDrone" (click)="showDroneFn()">Hide Drone</button>
+  </ng-container>
+</div>
+
+<div style="background: deepskyblue">
+  <img class="bird" *ngIf="showDrone" [style.marginLeft.px]="droneX" [style.marginTop.px]="droneY" src="../../assets/images/drone.png"
+    style="height: 100px">
+    <div class="bird" [style.marginLeft.px]="x" [style.marginTop.px]="y" (panstart)="onPanStart($event)" (panmove)="onPan($event)">
+      <img src="../../assets/images/bird.gif" style="height: 100px">
+    </div>
+    <div class="image"></div>
+</div>
