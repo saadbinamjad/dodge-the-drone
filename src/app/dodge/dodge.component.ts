@@ -44,19 +44,24 @@ export class DodgeComponent implements OnInit {
   }
 
   onPan(event: any): void {
+    this.showDrone = true;
     this.score = this.score + 10;
+
+    this.droneY = Math.floor(Math.random() * 700) + 1;
+    this.droneX = Math.floor(Math.random() * 300) + 1;
+
     event.preventDefault();
     this.x = this.startX + event.deltaX;
     this.y = this.startY + event.deltaY;
     if (this.y == this.droneY || this.x == this.droneX) {
-      this.showDroneFn();
       this.gameOver();
     }
   }
 
   start() {
     this.initDrone();
-    this.showDrone = false;
+    this.score = 0;
+    this.showDrone = true;
     this.show = !this.show;
   }
 

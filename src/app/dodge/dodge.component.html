@@ -5,9 +5,7 @@
   </ng-container>
   <ng-container *ngIf="show">
     <h2 style="text-align: center" (click)="start()">Score: {{ score }}</h2>
-    <button class="button" (click)="start()">Restart</button>
-    <button class="button" *ngIf="!showDrone" (click)="showDroneFn()">Show Drone</button>
-    <button class="button" *ngIf="showDrone" (click)="showDroneFn()">Hide Drone</button>
+    <button class="button" *ngIf="showDrone" (click)="start()">Restart</button>
   </ng-container>
 </div>
 
